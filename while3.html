@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    Problema: Validar dados do Usuário
+    Faça um programa que leia e valide as seguintes informações:
+    Nome: maior que 3 caracteres;
+    Idade: entre 0 e 150;
+    Salário: maior que zero;
+    Sexo: 'f' ou 'm';
+    Estado Civil: 's', 'c', 'v', 'd';
+    */
+
+    //Entrada
+    let nome = prompt("Insira seu nome")
+    let idade = Number(prompt("Insira sua idade "))
+    let sexo = prompt("Insira seu sexo (F) ou (M)").toLowerCase()
+    let salario = Number(prompt("Insira seu salario"))
+    let estadoCivil = prompt("Insira seu estado civil (C) (D) (S) (V)").toLowerCase()
+    let estados = ["c", "d", "v", "s"]
+    let array = ["f", "m"]
+    //Processamento
+    while (nome.length < 4 || (idade < 0 && idade > 150) || (salario < 0) || !estados.includes(estadoCivil) || !array.includes(sexo)) {
+
+        if (nome.length < 4) {
+            nome = prompt("Insira seu nome (minimo 4 letras)")
+        }
+        if (idade < 0 && idade > 150) {
+            idade = Number(prompt("Insira sua idade (Entre 0 e 150)"))
+        }
+        if ((salario < 0)) {
+            salario = Number(prompt("Insira seu salario (Maior que 0)"))
+        }
+        if (!estados.includes(estadoCivil)) {
+            estadoCivil = prompt("Insira seu estado civil (C) (D) (S) (V)").toLowerCase()
+        }
+        if (!array.includes(sexo)) {
+             sexo = prompt("Insira seu sexo (F) ou (M)").toLowerCase()
+        }
+    }
+ 
+
+
+    //Saída
+    alert(`Seu nome é ${nome}, sua idade é ${idade}, seu salario é ${salario}, seu sexo é ${sexo} e seu estado civil é ${estadoCivil}`)
+</script>

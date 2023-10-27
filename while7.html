@@ -1,0 +1,57 @@
+
+<meta charset="UTF-8">
+<script>
+    /*
+    Problema: Pesquisa de Idade
+    Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (M/F) e salário. Faça um programa que calcule e mostre:
+
+    a) A média dos salários do grupo;
+    b) A maior e a menor idade do grupo;
+    c) A quantidade de mulher na região;
+    d) A idade e o sexo da pessoa que possui o menor salário;
+
+    Finalize a entrada de dados ao ser digitada uma idade negativa.
+    */
+
+    //Entrada
+
+    let dinheiro = [];
+    let mulher = 0;
+    let idade = [];
+    let dados = {
+        
+        idade: Number(prompt(`Insira sua idade`)),
+        sex: prompt(`Insira seu sexo "M" ou "F"`).toLowerCase(),
+        dinheiro: parseFloat(prompt(`Insira seu salário`).replace(",", "."))
+
+    };
+    let pessoas = [];
+    pessoas.push(dados)
+
+    //Processamento
+    while (dados.idade >= 1) {
+      
+        dados = {
+          
+            idade: Number(prompt(`Insira sua idade`)),
+            sex: prompt(`Insira seu sexo "M" ou "F"`).toLowerCase(),
+            dinheiro: parseFloat(prompt(`Insira seu salário`).replace(",", "."))
+        };
+       
+       
+        pessoas.push(dados)
+        salarios.push(dados.dinheiro)
+        idade.push(dados.idade)
+
+                 dados.sex == "f" ? mulher++ : ""
+
+    }
+    
+    
+   
+                let media = salarios.reduce((a, b) => a + b, 0) / salarios.length
+                let salarioLow = pessoas.sort((a, b) => a.dinheiro - b.dinheiro)[0];
+
+    //Saída
+    alert(`A média de salários do grupo é ${media.toFixed(2).replace(".",",")}, a maior idade do grupo é de ${Math.max(...idade)} e a menor idade do grupo é de ${Math.min(...idade)}, a quantidade de mulheres são de ${mulher} e o sexo e a idade da pessoa com menor salário é de ${salarioLow.sex} e ${menorSalario.idade}`)
+</script>
